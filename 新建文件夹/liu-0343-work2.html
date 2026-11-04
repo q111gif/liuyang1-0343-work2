@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>古筝社招新</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+    line-height: 1.8;
+    color: #222;
+    background: #f4f5f7;
+  }
+  .music-btn {
+    position: fixed;
+    left: 16px;
+    top: 16px;
+    z-index: 2000;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 999px;
+    background: #d97706;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,.25);
+  }
+  .music-btn:hover { background: #b45309; }
+  header {
+    padding: 56px 20px 28px;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(135deg, #1f2937, #78350f);
+  }
+  header h1 { margin: 0 0 10px; font-size: 36px; letter-spacing: 2px; }
+  header p { margin: 0; opacity: .9; }
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    text-align: center;
+    padding: 12px 8px;
+    background: #111827;
+    box-shadow: 0 2px 8px rgba(0,0,0,.2);
+  }
+  .nav a {
+    display: inline-block;
+    margin: 4px 10px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .nav a:hover { color: #fcd34d; }
+  .section {
+    max-width: 1000px;
+    margin: 24px auto;
+    padding: 26px 34px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,.08);
+    scroll-margin-top: 64px;
+  }
+  .section h2 {
+    margin-top: 0;
+    padding-bottom: 8px;
+    border-bottom: 3px solid #d97706;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+  }
+  th, td {
+    border: 1px solid #999;
+    padding: 9px 10px;
+    vertical-align: top;
+  }
+  .center { text-align: center; }
+  .club-img {
+    display: block;
+    width: 100%;
+    max-width: 720px;
+    margin: 16px auto;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform .2s;
+  }
+  .club-img:hover { transform: scale(1.015); }
+  .video-wrap { text-align: center; overflow-x: auto; }
+  .video-wrap embed { max-width: 100%; border-radius: 10px; }
+  .back-top {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background: #111827;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .back-top:hover { background: #d97706; }
+  form table th {
+    width: 180px;
+    text-align: left;
+    background: #f3f4f6;
+  }
+  input[type="text"], select, textarea {
+    padding: 7px 9px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    font-family: inherit;
+  }
+  textarea { width: 100%; resize: vertical; }
+  input[type="submit"], input[type="reset"] {
+    padding: 8px 18px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  input[type="submit"] { background: #d97706; color: #fff; }
+  input[type="reset"] { background: #ddd; color: #222; }
+  footer {
+    padding: 26px 16px;
+    text-align: center;
+    color: #666;
+  }
+  @media (max-width: 640px) {
+    .section { margin: 14px 10px; padding: 18px; }
+    header h1 { font-size: 28px; }
+    .music-btn { left: 10px; top: 10px; padding: 8px 12px; }
+    form table th { width: 110px; }
+  }
+</style>
+</head>
+<body>
+
+<div id="top"></div>
+
+<audio id="bgm" src="music.mp3" loop preload="auto"></audio>
+<button id="musicBtn" class="music-btn" onclick="toggleMusic()">🎵 点击播放背景音乐</button>
+
+<header>
+  <h1>古筝社招新</h1>
+  <p>弦音流转，寻觅知音</p>
+</header>
+
+<nav class="nav">
+  <a href="#intro">社团简介</a>
+  <a href="#schedule">活动安排</a>
+  <a href="#show">风采展示</a>
+  <a href="#story">社员故事</a>
+  <a href="#signup">在线报名</a>
+</nav>
+
+<main>
+    <section id="intro" class="section">
+  <h2>社团简介</h2>
+  <p>古筝社是一个以古筝演奏、传统音乐交流、舞台实践和校园文化活动为主要方向的学生社团。无论你是从未接触过古筝的新手，还是已经能够独立演奏曲目的同学，都可以在这里找到适合自己的学习与交流方式。社团以“弘扬国乐、共同进步、丰富校园文化生活”为宗旨，通过基础教学、曲目排练、合奏训练和舞台演出，让每一位成员在轻松友好的氛围中感受传统音乐的魅力。</p>
+
+  <p>在社团日常活动中，我们会定期开展古筝基础教学，包括佩戴义甲、坐姿手型、基础指法（如托、抹、勾、剔）、音阶练习、简谱识读、摇指与滑音技巧等内容。对于已有一定基础的同学，我们会组织进阶曲目练习、重奏与合奏训练、舞台表现分享等活动。社团鼓励成员之间互相学习、互相帮助，在合作中建立友谊，在练习中获得成就感。</p>
+
+  <p>古筝社不仅是一个学习乐器的地方，更是一个展示自我、结识朋友的平台。我们会在每学期安排新成员见面会、古筝基础教学公开课、草坪音乐会、期末汇报演出等活动，让成员有机会走上舞台，把练习成果转化为真实的演出体验。</p>
+
+  <p>如果你喜欢古风的意境，喜欢弦音里的故事感，或者只是想在学习之余找到一个放松心情的爱好，古筝社都欢迎你的加入。我们相信，音乐不需要多么完美的起点，重要的是愿意拨动第一根琴弦。期待与你一起，在晚风、灯光和琴声中，写下属于我们的社团故事。</p>
+  
+  <p><strong>【注意：请用文心一言继续扩写本部分到1000字以上，可直接粘贴在下方】</strong></p>
+
+  <a class="back-top" href="#top">一键返回顶部</a>
+</section>
+
+<section id="schedule" class="section">
+  <h2>本学期主要活动安排</h2>
+
+  <table>
+    <tr>
+      <th colspan="4" class="center">古筝社2026年春季学期活动安排表</th>
+    </tr>
+    <tr class="center">
+      <th>时间</th>
+      <th>活动名称</th>
+      <th>地点</th>
+      <th>负责人</th>
+    </tr>
+    <tr>
+      <td>3月5日 19:00</td>
+      <td>新成员见面会</td>
+      <td rowspan="2" class="center">艺术楼 A101</td>
+      <td>社长：刘同学</td>
+    </tr>
+    <tr>
+      <td>3月12日 19:00</td>
+      <td>古筝基础教学公开课</td>
+      <td>教学部：李同学</td>
+    </tr>
+    <tr>
+      <td>3月19日 19:00</td>
+      <td>基础指法与音阶专题练习</td>
+      <td>艺术楼 A102</td>
+      <td>教学部：王同学</td>
+    </tr>
+    <tr>
+      <td>4月2日 19:00</td>
+      <td>曲目分组排练</td>
+      <td>艺术楼 A101</td>
+      <td>活动部：赵同学</td>
+    </tr>
+    <tr>
+      <td>4月16日 18:30</td>
+      <td>草坪音乐会</td>
+      <td>中心广场</td>
+      <td>演出部：孙同学</td>
+    </tr>
+    <tr>
+      <td>5月14日 19:00</td>
+      <td>古筝重奏与舞台表现训练</td>
+      <td>艺术楼 A103</td>
+      <td>演出部：周同学</td>
+    </tr>
+    <tr>
+      <td>6月4日 19:00</td>
+      <td>期末汇报演出</td>
+      <td>大学生活动中心</td>
+      <td>全体干部</td>
+    </tr>
+  </table>
+  <p>说明：以上安排会根据天气、场地和学校活动安排适当调整，具体以社团群通知为准。新成员见面会与古筝基础教学公开课均在艺术楼 A101 举行。</p>
+  <a class="back-top" href="#top">一键返回顶部</a>
+</section>
+<section id="show" class="section">
+  <h2>风采展示</h2>
+  <p>下面是社团日常演奏照片。点击图片可以跳转到活动介绍页面。</p>
+  <a href="club_intro.html" title="点击查看社团活动介绍">
+    <img class="club-img" src="club.jpg" alt="古筝社日常演奏照片">
+  </a>
+
+  <h3>社团活动视频</h3>
+  <div class="video-wrap">
+    <embed src="club.mp4" type="video/mp4" width="720" height="405">
+  </div>
+  <p>照片和视频记录了社团成员在日常排练、草坪音乐会和汇报演出中的精彩瞬间。欢迎新同学加入我们！</p>
+  <a class="back-top" href="#top">一键返回顶部</a>
+</section>
+
+<section id="story" class="section">
+  <h2>社员故事（节选）</h2>
+  <p>刚加入古筝社时，我还是一个连指甲都戴不好的新手。第一次参加新生见面会，我坐在活动室最后一排，看着学姐们指尖在琴弦上轻舞，弹出如流水般的旋律，心里既羡慕又紧张。轮到我自我介绍时，我只说了一句“我想学会弹一首完整的曲子”。没想到，正是这句简单的愿望，开启了我大学里最温暖的一段社团生活。</p>
+
+  <p>社团的练习氛围非常友好。基础课结束后，大家不会急着离开，而是围在一起，互相帮忙调整琴架、交换胶布。有一次我练《渔舟唱晚》总是卡不准节奏，旁边的同学陪我放慢速度一遍遍数拍子。那天晚上，我们练到教学楼快关门，终于把那段旋律顺了下来。那一刻我才明白，社团的意义不只是学会一门乐器，更是在一次次陪伴中认识一群愿意一起坚持的人。</p>
+
+  <p>后来，我报名参加了草坪音乐会。上台前我特别紧张，手心全是汗。社长拍拍我的肩说：“不用追求完美，把你想表达的情感弹出来就好。”灯光亮起，我听见台下有人跟着节奏轻轻拍手。那首曲子并不复杂，却让我第一次感受到舞台和分享的快乐。演出结束后，很多新同学来问我们怎么加入社团，我突然意识到，自己已经从那个坐在最后一排的新手，变成了愿意把国乐传递给别人的传承者。</p>
+
+  <p><strong>【注意：请用文心一言继续扩写本部分到1000字以上，可直接粘贴在下方】</strong></p>
+  <a class="back-top" href="#top">一键返回顶部</a>
+</section>
+
+<section id="signup" class="section">
+  <h2>古筝社在线报名表</h2>
+  <form action="#" method="post">
+    <table>
+      <tr>
+        <th>1. 姓名</th>
+        <td><input type="text" name="name" required></td>
+      </tr>
+      <tr>
+        <th>2. 性别</th>
+        <td>
+          <label><input type="radio" name="gender" value="男" required> 男</label>
+          <label><input type="radio" name="gender" value="女"> 女</label>
+        </td>
+      </tr>
+      <tr>
+        <th>3. 出生日期</th>
+        <td>
+          年 <input type="text" name="birthYear" size="5" placeholder="YYYY">
+          月 <input type="text" name="birthMonth" size="3" placeholder="MM">
+          日 <input type="text" name="birthDay" size="3" placeholder="DD">
+        </td>
+      </tr>
+      <tr>
+        <th>4. 手机 / 邮箱</th>
+        <td>
+          手机：<input type="text" name="phone" placeholder="请输入手机号">
+          邮箱：<input type="text" name="email" placeholder="请输入邮箱">
+        </td>
+      </tr>
+      <tr>
+        <th>5. 是否有古筝基础</th>
+        <td>
+          <label><input type="radio" name="guzhengBase" value="有" required> 有</label>
+          <label><input type="radio" name="guzhengBase" value="无"> 无</label>
+        </td>
+      </tr>
+      <tr>
+        <th>6. 兴趣方向</th>
+        <td>
+          <label><input type="checkbox" name="interest" value="古筝独奏"> 古筝独奏</label>
+          <label><input type="checkbox" name="interest" value="合奏"> 合奏</label>
+          <label><input type="checkbox" name="interest" value="乐理学习"> 乐理学习</label>
+          <label><input type="checkbox" name="interest" value="舞台表演"> 舞台表演</label>
+        </td>
+      </tr>
+      <tr>
+        <th>7. 年级</th>
+        <td>
+          <select name="grade" required>
+            <option value="">请选择年级</option>
+            <option value="大一">大一</option>
+            <option value="大二">大二</option>
+            <option value="大三">大三</option>
+            <option value="大四">大四</option>
+            <option value="研究生">研究生</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <th>8. 自我介绍</th>
+        <td>
+          <textarea name="selfIntro" rows="6" placeholder="请简单介绍自己、以及加入古筝社的理由……"></textarea>
+        </td>
+      </tr>
+      <tr>
+        <th>9. 是否服从活动安排</th>
+        <td>
+          <label><input type="radio" name="follow" value="是" required> 是</label>
+          <label><input type="radio" name="follow" value="否"> 否</label>
+        </td>
+      </tr>
+      <tr>
+        <th>10. 提交操作</th>
+        <td>
+          <input type="submit" value="提交报名">
+          <input type="reset" value="重置表单">
+        </td>
+      </tr>
+    </table>
+  </form>
+  <a class="back-top" href="#top">一键返回顶部</a>
+</section>
+</main>
+
+<footer>
+  <p>古筝社招新网站 · 期待你的加入</p>
+</footer>
+
+<script>
+  const bgm = document.getElementById("bgm");
+  const musicBtn = document.getElementById("musicBtn");
+
+  function toggleMusic() {
+    if (bgm.paused) {
+      bgm.play().then(function () {
+        musicBtn.textContent = "⏸ 暂停背景音乐";
+      }).catch(function () {
+        alert("浏览器阻止了自动播放，请再次点击按钮，或检查 music.mp3 是否在同一文件夹。");
+      });
+    } else {
+      bgm.pause();
+      musicBtn.textContent = "🎵 点击播放背景音乐";
+    }
+  }
+</script>
+
+</body>
+</html>
